@@ -3,7 +3,7 @@ Css, HTML and JavaScript code for a html circle menu. CSS grid is used to place 
 
 Use `addArticleMenuButton` JS function to add more buttons. And place buttons according to CSS grid column and row attributes.
 
-`id`: Into which menu button is been added  
+`id`: Into which menu button is been added. Must match **?** in `<div class="article-menu-grid" id="articleMenu-?"></div>`  
 `row`: Row of the button  
 `col`: Column of the button 
 `img`: Image to show as button  

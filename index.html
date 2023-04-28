@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Menu with Function Buttons</title>
+    <style>
+        .article-menu-grid{
+            display: grid;
+            width: max-content;
+        }
+        .article-menu-grid > button{
+            cursor: pointer;
+            appearance: none;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            min-width: 24px;
+            min-height: 24px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 24px 24px;
+        }
+        .article-menu-grid > button.center{
+            border-radius: 50%;
+            border: solid 2px green;
+            min-width: 32px;
+            min-height: 32px;
+            margin: 1px;
+        }
+    </style>
+    <script>
+        function addArticleMenuButton(id, row, col, img, cntr, action){
+            let menu = document.getElementById("articleMenu-"+id);
+            if(menu){
+                let btn = document.createElement("button");
+                btn.style = "grid-row:"+row+"; grid-column: "+col+"; background-image:url("+img+");";
+                if(cntr) btn.className = "center";
+                btn.addEventListener("click", action);
+                menu.appendChild(btn);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="article-menu-grid" id="articleMenu-1"></div>
+    <script>
+        addArticleMenuButton("1", "1", "2", "img/bell.png", false, function(){
+            alert("bell");
+        });
+        addArticleMenuButton("1", "2", "1", "img/fast-delivery-1.png", false, function(){
+            alert("fast-delivery");
+        });
+        addArticleMenuButton("1", "2", "2", "img/headquarter.png", true, function(){
+            alert("headquarter");
+        });
+        addArticleMenuButton("1", "2", "3", "img/stock.png", false, function(){
+            alert("stock");
+        });
+        addArticleMenuButton("1", "3", "2", "img/warehouse.png", false, function(){
+            alert("warehouse");
+        });
+    </script>
+</body>
+</html>
